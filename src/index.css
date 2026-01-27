@@ -1,0 +1,73 @@
+/* Import Satoshi Font from Fontshare CDN */
+@import url("https://cdn.fontshare.com/wfs/5e3cd5dbe5c9f5c8f4c6d5e4f3a2b1c9/Satoshi.css");
+
+@import "tailwindcss";
+
+@theme {
+  /* Core Colors */
+  --color-primary: #a25b3c;
+  --color-secondary: #5b7c99;
+  --color-tertiary: #d9a066;
+  --color-accent: #8e7cc3;
+
+  /* Neutrals */
+  --color-background: #f5f3ef;
+  --color-offWhite: #edeae4;
+  --color-border: #d1cfcb;
+
+  /* Text */
+  --color-text: #2c2c2c;
+  --color-text-secondary: #5a5a5a;
+  --color-text-tertiary: #8a8a8a;
+
+  /* Status Colors */
+  --color-success: #4caf50;
+  --color-error: #c0392b;
+  --color-warning: #e6b800;
+  --color-info: #2980b9;
+
+  /* Hover States */
+  --color-success-light: #dff0d8;
+  --color-error-light: #f2dede;
+  --color-warning-light: #fcf8e3;
+  --color-info-light: #d9edf7;
+  --color-primary-light: #f2d8c2;
+
+  /* Font Family */
+  --font-sans: "Satoshi", system-ui, sans-serif;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Satoshi", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Satoshi", system-ui, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

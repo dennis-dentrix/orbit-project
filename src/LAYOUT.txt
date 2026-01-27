@@ -1,0 +1,20 @@
+src/
+├── assets/              # Static assets (images, fonts, icons)
+├── components/          # Reusable UI components
+│   ├── common/         # Shared components (Button, Card, Modal)
+│   ├── layout/         # Layout components (Header, Footer, Sidebar)
+│   └── form/           # Form-specific components
+├── config/             # App configuration files
+├── constants/          # App constants (enums, static values)
+├── contexts/           # React Context providers
+├── hooks/              # Custom React hooks
+├── pages/              # Page components (route views)
+│   ├── Home/
+│   ├── About/
+│   └── ...
+├── services/           # API services, HTTP clients
+├── utils/              # Helper functions, utilities
+├── types/              # TypeScript types/interfaces
+├── styles/             # Global styles, theme config
+├── App.jsx             # Root component
+└── main.jsx            # Entry point
