@@ -39,7 +39,7 @@ export default function HomeDisplay() {
     <div className='w-full'>
       <div className='flex w-full flex-col gap-3 rounded-2xl border border-border bg-linear-to-r from-offWhite via-background to-tertiary/15 px-5 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between'>
         <div>
-          <p className='text-xl font-semibold uppercase tracking-[0.15em] text-primary'>
+          <p className='text-xl font-semibold uppercase tracking-[0.05em] text-primary'>
             Services
           </p>
           <h3 className='mt-1 text-[13px] font-semibold text-primary/90'>

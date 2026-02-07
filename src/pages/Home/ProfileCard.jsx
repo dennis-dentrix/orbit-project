@@ -19,7 +19,7 @@ export default function ProfileCard({ profile }) {
           />
         </div>
         <div>
-          <p className='text-[11px] font-semibold uppercase tracking-[0.25em] text-textTertiary'>
+          <p className='text-[11px] font-semibold uppercase tracking-[0.15em] text-textTertiary'>
             Profile
           </p>
           <h4 className='mt-1 text-lg font-semibold text-text'>{data.name}</h4>

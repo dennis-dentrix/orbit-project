@@ -31,7 +31,7 @@ function Sidebar({ isOpen, onClose }) {
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo Section */}
-        <div className="flex items-center justify-between p-5 ">
+        <div className="flex items-center justify-between p-5 border-b border-border">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
               <MessageCircle className="w-5 h-5 text-white" />

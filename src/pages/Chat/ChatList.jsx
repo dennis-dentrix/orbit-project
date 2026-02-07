@@ -31,7 +31,7 @@ export default function ChatList({ chats, onSelectChat, selectedChatId, searchTe
 
         {/* Search Bar */}
         <div className="relative">
-          <div className="flex items-center bg-white rounded-lg px-3 py-2.5 shadow-sm border border-border">
+          <div className="flex items-center bg-white rounded-lg px-3 py-2.5 shadow-sm">
             <Search size={18} className="text-textSecondary mr-3 shrink-0" />
             <input
               type="text"
@@ -47,7 +47,7 @@ export default function ChatList({ chats, onSelectChat, selectedChatId, searchTe
       {/* Archived Toggle */}
       <button
         onClick={() => setShowArchived(!showArchived)}
-        className="flex items-center gap-3 px-4 py-3 hover:bg-offWhite border-b border-border text-textSecondary transition-colors"
+        className="flex items-center gap-3 px-4 py-3 hover:bg-offWhite  text-textSecondary transition-colors"
       >
         <div className="w-8 h-8 rounded-full bg-offWhite flex items-center justify-center">
           <Archive size={16} />

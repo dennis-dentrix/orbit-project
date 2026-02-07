@@ -1,5 +1,5 @@
 import { ArrowLeft, Camera, Mic, Paperclip, Phone, Plus, Search, Send, Smile, Video, X } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import MessageBubble from './MessageBubble';
 import { currentUser } from './data';
 
@@ -31,7 +31,7 @@ export default function ChatWindow({ chat, messages, onBack, onSendMessage }) {
   return (
     <div className="flex flex-col h-full bg-background">
       {/* Chat Header */}
-      <div className="flex items-center gap-3 px-3 py-2.5 bg-white border-b border-border shrink-0">
+      <div className="flex items-center gap-3 px-3 py-2.5 bg-white shrink-0">
         <button onClick={onBack} className="md:hidden text-textSecondary hover:bg-offWhite p-2 rounded-full transition -ml-2">
           <ArrowLeft size={22} />
         </button>
