@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import profileImg from "/profile.jpeg"
 
 export default function ProfileCard({ profile }) {
@@ -40,7 +41,10 @@ export default function ProfileCard({ profile }) {
           </span>
         </div>
         <button className='rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40'>
-          Message
+          <NavLink to={"/chat"} >
+
+            Message
+          </NavLink>
         </button>
       </div>
     </div>
