@@ -26,12 +26,12 @@ function Sidebar({ isOpen, onClose }) {
 
       <aside className={`
         fixed lg:static inset-y-0 left-0 z-50
-        w-64 bg-white border-r border-border shadow-lg lg:shadow-none
+        w-64 bg-white  shadow-lg lg:shadow-none
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo Section */}
-        <div className="flex items-center justify-between p-5 border-b border-border">
+        <div className="flex items-center justify-between p-5 ">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
               <MessageCircle className="w-5 h-5 text-white" />
@@ -91,7 +91,7 @@ function Sidebar({ isOpen, onClose }) {
 
 function Header({ onMenuClick }) {
   return (
-    <header className="sticky top-0 z-30 p-2 bg-white/80 backdrop-blur-lg border-b border-border shadow-sm">
+    <header className="sticky top-0 z-30 p-2 bg-white/80 backdrop-blur-lg shadow-sm">
       <div className="flex items-center justify-between px-5 py-3">
         <div className="flex items-center gap-3">
           <button
