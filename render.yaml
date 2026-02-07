@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: orbit-ke
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: dist

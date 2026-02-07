@@ -58,7 +58,7 @@ export default function HomeDisplay() {
       </div>
 
       {/* <div className="mt-6 rounded-3xl border border-border bg-offWhite/40 p-4 sm:p-6"> */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-8">
         {profiles.map((profile) => (
           <ProfileCard key={profile.name} profile={profile} />
         ))}

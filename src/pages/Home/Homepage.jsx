@@ -7,9 +7,9 @@ export default function HomePage() {
     // <div className="bg-background flex items-start justify-center pt-16">
     <div className="bg-background w-full">
       <div className="mx-auto w-full max-w-6xl px-6 py-8">
-        <HomeDisplay />
+        {/* <HomeDisplay /> */}
         <div className="mt-6 w-full max-w-4xl">
-        {/* <div className="bg-white rounded-2xl shadow-xl p-8 border border-border">
+          {/* <div className="bg-white rounded-2xl shadow-xl p-8 border border-border">
           <div className="text-center mb-8">
             <div className="px-5 w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-4">
               <MessageCircleMore size={28} />
