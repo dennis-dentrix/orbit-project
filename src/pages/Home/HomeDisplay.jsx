@@ -1,37 +1,52 @@
 import React from 'react'
 import ProfileCard from './ProfileCard'
+import profileImg from "/profile.jpeg"
 
 export default function HomeDisplay() {
   const profiles = [
     {
+      id: 'p1',
       name: 'Amina Njeri',
       service: 'Product Design',
       status: 'Available for chat',
+      image: profileImg,
     },
     {
+      id: 'p2',
       name: 'Kelvin Njeri',
       service: 'Backend Engineering',
       status: 'Available for chat',
+      image: profileImg,
     },
     {
+      id: 'p3',
       name: 'Hannah Wanjiru',
       service: 'Brand Strategy',
       status: 'Available for chat',
+      image: profileImg,
+      myMessages: ["Hello, good morning"],
+      receiverMessages: ["Hello"]
     },
     {
+      id: 'p4',
       name: 'Derrick Otieno',
       service: 'Frontend Engineering',
       status: 'Available for chat',
+      image: profileImg,
     },
     {
+      id: 'p5',
       name: 'Grace Achieng',
       service: 'UX Research',
       status: 'Available for chat',
+      image: profileImg,
     },
     {
+      id: 'p6',
       name: 'Samuel Kariuki',
       service: 'Mobile Development',
       status: 'Available for chat',
+      image: profileImg,
     },
   ]
 
@@ -60,7 +75,7 @@ export default function HomeDisplay() {
       {/* <div className="mt-6 rounded-3xl border border-border bg-offWhite/40 p-4 sm:p-6"> */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-8">
         {profiles.map((profile) => (
-          <ProfileCard key={profile.name} profile={profile} />
+          <ProfileCard key={profile.id} profile={profile} />
         ))}
       </div>
       {/* </div> */}

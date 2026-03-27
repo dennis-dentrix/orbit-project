@@ -1,13 +1,22 @@
-import { NavLink } from "react-router-dom"
 import profileImg from "/profile.jpeg"
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { openChatFromProfile } from '../../store/chatSlice'
 
 export default function ProfileCard({ profile }) {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const data = {
-    // name: 'Amina Njeri',
-    // service: 'Product Design',
-    // status: 'Available for chat',
-    // image: profileImg,
+    name: 'Amina Njeri',
+    service: 'Product Design',
+    status: 'Available for chat',
+    image: profileImg,
     ...profile,
+  }
+
+  const handleMessage = () => {
+    dispatch(openChatFromProfile(data))
+    navigate('/chat')
   }
   return (
     <div className='w-full max-w-sm rounded-2xl border border-border bg-white/80 p-4 shadow-sm'>
@@ -40,11 +49,12 @@ export default function ProfileCard({ profile }) {
             Fast Response
           </span>
         </div>
-        <button className='rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40'>
-          <NavLink to={"/chat"} >
-
-            Message
-          </NavLink>
+        <button
+          type='button'
+          onClick={handleMessage}
+          className='rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40'
+        >
+          Message
         </button>
       </div>
     </div>

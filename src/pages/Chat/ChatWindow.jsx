@@ -7,6 +7,7 @@ import { currentUser } from './data';
 export default function ChatWindow({ chat, messages, onBack, onSendMessage }) {
   const [newMessage, setNewMessage] = useState('');
   const [showAttachments, setShowAttachments] = useState(false);
+  const [sendAs, setSendAs] = useState('me');
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +16,8 @@ export default function ChatWindow({ chat, messages, onBack, onSendMessage }) {
 
   const handleSendMessage = () => {
     if (newMessage.trim()) {
-      onSendMessage(newMessage);
+      const senderId = sendAs === 'me' ? currentUser.id : chat.contact.id;
+      onSendMessage(newMessage, senderId);
       setNewMessage('');
       setShowAttachments(false);
     }
@@ -60,7 +62,36 @@ export default function ChatWindow({ chat, messages, onBack, onSendMessage }) {
       </div>
 
       {/* Message Input */}
-      <div className="flex items-center gap-1.5 px-2 sm:px-3 py-2 bg-white border-t border-border shrink-0">
+      <div className="flex flex-col gap-2 px-2 sm:px-3 py-2 bg-white border-t border-border shrink-0">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-[11px] uppercase tracking-[0.2em] text-textTertiary">
+            Send As
+          </span>
+          <button
+            type="button"
+            onClick={() => setSendAs('me')}
+            className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+              sendAs === 'me'
+                ? 'bg-primary text-white'
+                : 'bg-offWhite text-textSecondary hover:bg-offWhite/70'
+            }`}
+          >
+            You
+          </button>
+          <button
+            type="button"
+            onClick={() => setSendAs('them')}
+            className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+              sendAs === 'them'
+                ? 'bg-primary text-white'
+                : 'bg-offWhite text-textSecondary hover:bg-offWhite/70'
+            }`}
+          >
+            {chat.contact.name}
+          </button>
+        </div>
+
+        <div className="flex items-center gap-1.5">
         {/* Mobile: Plus button with attachment options */}
         <div className="relative md:hidden">
           <button
@@ -97,30 +128,30 @@ export default function ChatWindow({ chat, messages, onBack, onSendMessage }) {
           <Camera size={22} />
         </button>
 
-        {/* Input Field */}
-        <div className="flex-1 relative">
-          <input
-            type="text"
-            placeholder="Type a message"
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            onKeyPress={handleKeyPress}
-            className="w-full bg-offWhite rounded-lg px-4 py-2.5 outline-none text-text text-sm placeholder-textSecondary"
-          />
-        </div>
+          {/* Input Field */}
+          <div className="flex-1 relative">
+            <input
+              type="text"
+              placeholder="Type a message"
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+              onKeyPress={handleKeyPress}
+              className="w-full bg-offWhite rounded-lg px-4 py-2.5 outline-none text-text text-sm placeholder-textSecondary"
+            />
+          </div>
 
-        {/* Send or Mic button */}
-        {newMessage.trim() ? (
-          <button onClick={handleSendMessage} className="text-white p-2 rounded-full transition bg-primary hover:bg-hover">
-            <Send size={20} />
-          </button>
-        ) : (
-          <button className="text-textSecondary hover:bg-offWhite p-2 rounded-full transition">
-            <Mic size={22} />
-          </button>
-        )}
+          {/* Send or Mic button */}
+          {newMessage.trim() ? (
+            <button onClick={handleSendMessage} className="text-white p-2 rounded-full transition bg-primary hover:bg-hover">
+              <Send size={20} />
+            </button>
+          ) : (
+            <button className="text-textSecondary hover:bg-offWhite p-2 rounded-full transition">
+              <Mic size={22} />
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
 }
-
